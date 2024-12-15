@@ -1,0 +1,160 @@
+<h3 class="offer-center">Create Offer</h3>
+<form [formGroup]="offerForm">
+  <nz-form-item>
+    <nz-form-label [nzSpan]="6" nzFor="mode">Mode</nz-form-label>
+    <nz-form-control nzErrorTip="Please select a mode">
+      <nz-select id="mode" formControlName="mode" nzPlaceHolder="Select mode">
+        <nz-option nzValue="LCL" nzLabel="LCL"></nz-option>
+        <nz-option nzValue="FCL" nzLabel="FCL"></nz-option>
+        <nz-option nzValue="Air" nzLabel="Air"></nz-option>
+      </nz-select>
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSpan]="6" nzFor="movementType">Movement Type</nz-form-label>
+    <nz-form-control nzErrorTip="Please select movement type">
+      <nz-select id="movementType" formControlName="movement_type" nzPlaceHolder="Select movement type">
+        <nz-option nzValue="Door to Door" nzLabel="Door to Door"></nz-option>
+        <nz-option nzValue="Port to Door" nzLabel="Port to Door"></nz-option>
+        <nz-option nzValue="Door to Port" nzLabel="Door to Port"></nz-option>
+        <nz-option nzValue="Port to Port" nzLabel="Port to Port"></nz-option>
+      </nz-select>
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSpan]="6" nzFor="incoterms">Incoterms</nz-form-label>
+    <nz-form-control nzErrorTip="Please select incoterms">
+      <nz-select id="incoterms" formControlName="incoterm" nzPlaceHolder="Select incoterms">
+        <nz-option nzValue="DDP" nzLabel="Delivered Duty Paid (DDP)"></nz-option>
+        <nz-option nzValue="DAT" nzLabel="Delivered At Place (DAT)"></nz-option>
+      </nz-select>
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSpan]="6" nzFor="country">Country</nz-form-label>
+    <nz-form-control nzErrorTip="Please select a country">
+      <nz-input-group nzPrefixIcon="global">
+        <input
+          #countryInput
+          id="country"
+          type="text"
+          nz-input
+          formControlName="country"
+          [nzAutocomplete]="countryAuto"
+          (focus)="showAllCountries()"
+          (input)="filterCountries(countryInput.value)"
+          (ngModelChange)="updateCities()"
+          placeholder="Select a country"
+        />
+      </nz-input-group>
+      <nz-autocomplete #countryAuto>
+        <nz-auto-option *ngFor="let country of filteredCountries" [nzValue]="country">
+          {{ country }}
+        </nz-auto-option>
+      </nz-autocomplete>
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSpan]="6" nzFor="city">City</nz-form-label>
+    <nz-form-control nzErrorTip="Please select a city">
+      <nz-input-group nzPrefixIcon="home">
+        <input
+          #cityInput
+          id="city"
+          type="text"
+          nz-input
+          formControlName="city"
+          [nzAutocomplete]="cityAuto"
+          (focus)="showAllCities()"
+          (input)="filterCities(cityInput.value)"
+          placeholder="Select a city"
+        />
+      </nz-input-group>
+      <nz-autocomplete #cityAuto>
+        <nz-auto-option *ngFor="let city of filteredCities" [nzValue]="city">
+          {{ city }}
+        </nz-auto-option>
+      </nz-autocomplete>
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSpan]="6" nzFor="packageType">Package Type</nz-form-label>
+    <nz-form-control nzErrorTip="Please select package type">
+      <nz-select id="packageType" formControlName="package_type" nzPlaceHolder="Select package type">
+        <nz-option *ngFor="let type of packageTypes" [nzValue]="type" [nzLabel]="type"></nz-option>
+      </nz-select>
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSpan]="6" nzFor="unit1">Unit-1</nz-form-label>
+    <nz-form-control nzErrorTip="Please select unit-1">
+      <nz-select id="unit1" formControlName="unit_1" nzPlaceHolder="Select unit-1">
+        <nz-option nzValue="CM" nzLabel="CM"></nz-option>
+        <nz-option nzValue="IN" nzLabel="IN"></nz-option>
+      </nz-select>
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSpan]="6" nzFor="unit2">Unit-2</nz-form-label>
+    <nz-form-control nzErrorTip="Please select unit-2">
+      <nz-select id="unit2" formControlName="unit_2" nzPlaceHolder="Select unit-2">
+        <nz-option nzValue="KG" nzLabel="KG"></nz-option>
+        <nz-option nzValue="LB" nzLabel="LB"></nz-option>
+      </nz-select>
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSpan]="6" nzFor="currency">Currency</nz-form-label>
+    <nz-form-control nzErrorTip="Please select a currency">
+      <nz-select id="currency" formControlName="currency" nzPlaceHolder="Select currency">
+        <nz-option nzValue="USD" nzLabel="USD - US Dollar"></nz-option>
+        <nz-option nzValue="CNY" nzLabel="CNY - Chinese Yuan"></nz-option>
+        <nz-option nzValue="TRY" nzLabel="TRY - Turkish Lira"></nz-option>
+      </nz-select>
+    </nz-form-control>
+  </nz-form-item>
+
+  <div *ngIf="calculationResult" class="calculation-result">
+    <h3>Calculation Result</h3>
+    <p>Cartons to Box: {{ calculationResult.cartonToBox }}</p>
+    <p>Box to Pallet: {{ calculationResult.boxToPallet }}</p>
+    <p>Pallet Count: {{ calculationResult.palletCount }}</p>
+    <p>Message: {{ calculationResult.message }}</p>
+  </div>
+
+  <nz-form-item>
+    <nz-form-label [nzSpan]="6"></nz-form-label>
+    <nz-form-control>
+      <button
+        nz-button
+        nzType="primary"
+        [nzLoading]="loadingService.loading$ | async"
+        (click)="calculateDimensions()"
+        [disabled]="!offerForm.valid"
+        class="button-spacing"
+      >
+        Calculate
+      </button>
+
+      <button
+        nz-button
+        nzType="primary"
+        [nzLoading]="loadingService.loading$ | async"
+        (click)="saveOffer()"
+        [disabled]="!calculationResult"
+        class="button-spacing"
+      >
+        Save
+      </button>
+    </nz-form-control>
+  </nz-form-item>
+
+</form>

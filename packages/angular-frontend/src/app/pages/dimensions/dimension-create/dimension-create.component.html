@@ -1,0 +1,37 @@
+<h3 class="dimension-center">Create Package Type</h3>
+<form [formGroup]="dimensionForm" (ngSubmit)="addNewDimension()">
+  <nz-form-item>
+    <nz-form-label [nzSpan]="6" nzFor="type">Type</nz-form-label>
+    <nz-form-control [nzErrorTip]="'Type is required'">
+      <input id="type" nz-input formControlName="type" (input)="capitalizeFirstLetter('type')"/>
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSpan]="6" nzFor="width">Width</nz-form-label>
+    <nz-form-control [nzErrorTip]="'Width is required and must be greater than 0.'">
+      <input id="width" type="number" nz-input formControlName="width" type="number" />
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSpan]="6" nzFor="length">Length</nz-form-label>
+    <nz-form-control [nzErrorTip]="'Length is required and must be greater than 0.'">
+      <input id="length" type="number" nz-input formControlName="length" type="number" />
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSpan]="6" nzFor="height">Height</nz-form-label>
+    <nz-form-control [nzErrorTip]="'Height is required and must be greater than 0.'">
+      <input id="height" type="number" nz-input formControlName="height" type="number" />
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSpan]="6"></nz-form-label>
+    <nz-form-control>
+      <button nz-button nzType="primary" [nzLoading]="loadingService.loading$ | async" [disabled]="!dimensionForm.valid">Save</button>
+    </nz-form-control>
+  </nz-form-item>
+</form>

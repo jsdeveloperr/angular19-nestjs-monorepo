@@ -1,0 +1,65 @@
+<nz-layout class="app-layout">
+  <nz-sider class="menu-sidebar"
+    nzCollapsible
+    nzWidth="256px"
+    nzBreakpoint="md"
+    [(nzCollapsed)]="isCollapsed"
+    [nzTrigger]="null">
+    <div class="sidebar-logo">
+      <a href="https://ng.ant.design/" target="_blank">
+        <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo">
+        <h1>FORCEGET SOFTWARE</h1>
+      </a>
+    </div>
+    <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+      <li nz-submenu nzOpen nzTitle="Offers" nzIcon="table">
+        <ul>
+          <li nz-menu-item routerLink="/offers" routerLinkActive="active-menu-item">
+            Offer List
+          </li>
+          <li nz-menu-item routerLink="/offers/create" routerLinkActive="active-menu-item">
+            Create Offer
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+      <li nz-submenu nzOpen nzTitle="Package Types" nzIcon="appstore">
+        <ul>
+          <li nz-menu-item routerLink="/dimensions" routerLinkActive="active-menu-item">
+            Package Type List
+          </li>
+          <li nz-menu-item routerLink="/dimensions/create" routerLinkActive="active-menu-item">
+            Create Package Type
+          </li>
+        </ul>
+      </li>
+      <li nz-menu-item>
+        <a (click)="logout()">
+          <i nz-icon nzType="logout" nzTheme="outline"></i>
+          {{!isCollapsed ? 'Logout' : ''}}
+        </a>
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-header>
+      <div class="app-header">
+        <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
+            <span class="trigger"
+               nz-icon
+               [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+            ></span>
+        </span>
+      </div>
+    </nz-header>
+    <nz-content>
+      <div class="inner-content">
+        <router-outlet></router-outlet>
+      </div>
+    </nz-content>
+    <nz-footer class="app-footer">
+      FORCEGET SOFTWARE ©2024 Created by Abdulnasır olcan
+    </nz-footer>
+  </nz-layout>
+</nz-layout>

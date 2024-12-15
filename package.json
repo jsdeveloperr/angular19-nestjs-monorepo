@@ -1,0 +1,21 @@
+{
+  "name": "forceget-monorepo-assignment",
+  "private": true,
+  "scripts": {
+    "install:all": "make install",
+    "clean": "make clean",
+    "cache:clean": "make cache-clean",
+    "start:angular": "make start-angular",
+    "start:nest": "make start-nest",
+    "start:all": "make start-all",
+    "build:angular": "make build-angular",
+    "build:nest": "make build-nest",
+    "build:all": "make build-all",
+    "start:docker": "chmod +x start.sh && ./start.sh || start.bat",
+    "clean:docker": "docker-compose down --rmi all --volumes --remove-orphans",
+    "docker:run": "docker-compose up --build"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}

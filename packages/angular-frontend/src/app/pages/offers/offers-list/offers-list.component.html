@@ -1,0 +1,34 @@
+<div style="overflow-x: auto;">
+<nz-table
+  #basicTable
+  [nzData]="offers"
+  [nzBordered]="true"
+  [nzSize]="'middle'"
+  [nzScroll]="{ x: '1000px' }"
+>
+  <thead>
+    <tr>
+      <th nzWidth="10%">Mode</th>
+      <th nzWidth="15%">Movement Type</th>
+      <th nzWidth="15%">Incoterms</th>
+      <th nzWidth="15%">Country-City</th>
+      <th nzWidth="10%">Package Type</th>
+      <th nzWidth="10%">Unit-1</th>
+      <th nzWidth="10%">Unit-2</th>
+      <th nzWidth="10%">Currency</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let offer of offers">
+      <td>{{ offer.mode }}</td>
+      <td>{{ offer.movement_type }}</td>
+      <td>{{ offer.incoterm }}</td>
+      <td>{{ offer.country }} - {{offer.city}}</td>
+      <td>{{ offer.package_type }}</td>
+      <td>{{ getConvertedSize(offer.size, offer.unit_1) }}</td>
+      <td>{{ getConvertedWeight(offer.weight, offer.unit_2) }}</td>
+      <td>{{ offer.currency }}</td>
+    </tr>
+  </tbody>
+</nz-table>
+</div>

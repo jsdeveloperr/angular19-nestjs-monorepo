@@ -1,0 +1,25 @@
+<h3>Dimensions List</h3>
+<nz-table
+  #basicTable
+  [nzData]="dimensions"
+  [nzBordered]="true"
+  [nzSize]="'middle'"
+  [nzScroll]="{ x: '1000px' }"
+>
+  <thead>
+    <tr>
+      <th nzWidth="10%">Type</th>
+      <th nzWidth="10%">Width</th>
+      <th nzWidth="10%">Length</th>
+      <th nzWidth="10%">Height</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let dimension of dimensions">
+      <td>{{ dimension.type }}</td>
+      <td>{{ dimension.width }}</td>
+      <td>{{ dimension.length }}</td>
+      <td>{{ dimension.height }}</td>
+    </tr>
+  </tbody>
+</nz-table>
