@@ -90,6 +90,50 @@ Docker servisleri başarılı şekilde çalıştığında aşağıdaki adreslere
 
 ---
 
+## 🌐 **Proje URL’leri ve Kullanımı**
+
+Başarılı bir kurulumdan sonra aşağıdaki URL’leri kullanabilirsiniz:
+
+1. **Kayıt Olma (Register):**
+   - [http://localhost:4200/register](http://localhost:4200/register)
+   - Buradan kullanıcı oluşturabilirsiniz.
+
+2. **Giriş Yapma (Login):**
+   - [http://localhost:4200/login](http://localhost:4200/login)
+   - Kayıt olduğunuz kullanıcı bilgileriyle giriş yapın.
+
+3. **Boyut Ekleme (Dimensions):**
+   - **Önce şu URL’ye gidin:** [http://localhost:4200/dimensions/create](http://localhost:4200/dimensions/create)
+   - Aşağıdaki boyutları tek tek ekleyin:
+     | Adı      | Uzunluk | Genişlik | Yükseklik |
+     |----------|---------|----------|-----------|
+     | Carton   | 12      | 12       | 12        |
+     | Box      | 24      | 16       | 12        |
+     | Pallet   | 40      | 48       | 60        |
+
+4. **Teklif Oluşturma (Create Offer):**
+   - [http://localhost:4200/offers/create](http://localhost:4200/offers/create)
+   - Burada `Calculate` butonu ile teklif hesaplaması yapabilir ve ardından `Save` butonu ile kaydedebilirsiniz.
+
+---
+
+## 🧭 **Navigasyon Menüsü**
+
+Aşağıdaki menüler arayüzde sağlanmıştır:
+
+1. **Offers:**
+   - **Offer List:** Tüm teklifler listelenir.
+   - **Create Offer:** Yeni bir teklif oluşturabilirsiniz.
+
+2. **Package Types:**
+   - **Package Type List:** Boyutların listesi.
+   - **Create Package Type:** Yeni bir boyut oluşturabilirsiniz.
+
+3. **Logout:** Sistemde çıkış yapmak için kullanılır.
+
+---
+
+
 ## 🧹 **Proje Temizleme**
 
 Proje dosyalarını ve Docker servislerini temizlemek için:
@@ -158,6 +202,15 @@ Proje içerisinde aşağıdaki dizinler ve dosyalar yer almaktadır:
 ├── package.json            # Monorepo scriptleri
 └── .gitignore              # Git tarafından takip edilmeyecek dosyalar
 ```
+
+---
+
+## 🚀 **Test Adımları Özet:**
+
+1. **Kayıt Olun:** [http://localhost:4200/register](http://localhost:4200/register)
+2. **Giriş Yapın:** [http://localhost:4200/login](http://localhost:4200/login)
+3. **Boyutları Ekleyin:** [http://localhost:4200/dimensions/create](http://localhost:4200/dimensions/create)
+4. **Teklif Oluşturun:** [http://localhost:4200/offers/create](http://localhost:4200/offers/create)
 
 ---
 

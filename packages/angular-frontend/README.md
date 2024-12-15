@@ -1,6 +1,6 @@
 # **Angular Frontend Projesi Kullanım Kılavuzu**
 
-Bu belge, **Angular Frontend** projesinin kurulumunu, çalıştırılmasını ve geliştirme süreçlerini açıklamaktadır.
+**Angular Frontend** projesinin kurulumunu, çalıştırılması ve geliştirme süreçleri.
 
 ---
 

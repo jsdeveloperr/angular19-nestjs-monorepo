@@ -42,8 +42,8 @@ export class LoginComponent {
     private notification: NzNotificationService
   ) {
     this.validateForm = this.fb.group({
-      email: this.fb.control('test@example.com', [Validators.required, Validators.email]),
-      password: this.fb.control('password123', [Validators.required, Validators.minLength(6)]),
+      email: this.fb.control('', [Validators.required, Validators.email]),
+      password: this.fb.control('', [Validators.required, Validators.minLength(6)]),
     });
   }
 

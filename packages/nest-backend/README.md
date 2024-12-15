@@ -1,6 +1,6 @@
 # **NestJS Backend Projesi Kullanım Kılavuzu**
 
-Bu belge, `nest-backend` projesinin kurulumunu, çalıştırılmasını ve test edilmesini detaylı bir şekilde anlatır.
+`nest-backend` projesinin kurulumunu, çalıştırılması ve test edilmesi.
 
 ---
 
