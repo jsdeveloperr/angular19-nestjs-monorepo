@@ -1,4 +1,4 @@
-# Forceget Monorepo Assignment
+# Angular19 && Nestjs Monorepo
 
 Bu proje **NestJS** (Backend) ve **Angular** (Frontend) uygulamalarını içeren bir **monorepo** yapısında geliştirilmiştir. Projeyi başlatmak için gerekli araçların kurulumunu yapmanız ve talimatları takip etmeniz yeterlidir.
 

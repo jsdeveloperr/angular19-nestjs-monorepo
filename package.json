@@ -1,5 +1,5 @@
 {
-  "name": "forceget-monorepo-assignment",
+  "name": "angular19-nestjs-monorepo",
   "private": true,
   "scripts": {
     "install:all": "make install",

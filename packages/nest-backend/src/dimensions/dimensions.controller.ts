@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post, UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, Post, UseGuards, HttpException, HttpStatus } from '@nestjs/common';
 import { DimensionsService } from './dimensions.service';
 import { CreateDimensionDto } from './dto/create-dimension.dto';
 import { CalculateDimensionsDto } from './dto/calculate-dimensions.dto';
@@ -82,11 +82,23 @@ export class DimensionsController {
     }
 
     if (mode === 'LCL' && palletCount >= 24) {
-      throw new Error('Invalid mode: LCL mode cannot handle 24 or more pallets. Please choose FCL.');
+      throw new HttpException(
+        {
+          message: 'Invalid mode: LCL mode cannot handle 24 or more pallets. Please choose FCL.',
+          palletCount: palletCount,
+        },
+        HttpStatus.BAD_REQUEST
+      );
     }
-
+    
     if (mode === 'FCL' && palletCount > 24) {
-      throw new Error('Invalid mode: FCL mode cannot handle more than 24 pallets.');
+      throw new HttpException(
+        {
+          message: 'Invalid mode: FCL mode cannot handle more than 24 pallets.',
+          palletCount: palletCount,
+        },
+        HttpStatus.BAD_REQUEST
+      );
     }
 
     const size = pallet.width * pallet.length * pallet.height;
