@@ -33,7 +33,7 @@ Proje dosyalarını bilgisayarınıza indirmek için `git clone` komutunu kullan
 Aşağıdaki komutu terminalde çalıştırarak projeyi klonlayın:
 
 ```bash
-git clone https://github.com/jsdeveloperr/forceget-monorepo-assignment.git
+git clone https://github.com/jsdeveloperr/angular19-nestjs-monorepo.git
 ```
 
 ### **2. Proje Klasörüne Geçiş**
@@ -41,7 +41,7 @@ git clone https://github.com/jsdeveloperr/forceget-monorepo-assignment.git
 Proje dosyalarını indirdikten sonra proje klasörüne geçin:
 
 ```bash
-cd forceget-monorepo-assignment
+cd angular19-nestjs-monorepo
 ```
 
 ---
